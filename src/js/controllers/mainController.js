@@ -1,5 +1,11 @@
-var module = angular.module("NewsApp");
+var app = angular.module("NewsApp");
 
-module.controller("MainController",["$scope", function($scope){
+app.controller("MainController",["NewsAPIUrlsFactory","$scope","Restangular", function(NewsAPIUrlsFactory,$scope,Restangular){
+
+    console.log('entrooo');
+    console.log(NewsAPIUrlsFactory.getUrlTopHeadlines('el-mundo'));
+
+    // $scope.topheadlines = Restangular.getRequestedUrl(NewsAPIUrlsFactory.getUrlTopHeadlines('el-mundo'));
+    // console.log($scope.topheadlines);
 
 }]);

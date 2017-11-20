@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head ng-app="NewsApp">
+<html ng-app="NewsApp">
+<head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
@@ -12,11 +12,6 @@
     <script type="application/javascript" src="node_modules/angular-route/angular-route.js"></script>
     <script type="application/javascript" src="node_modules/lodash/lodash.js"></script>
     <script type="application/javascript" src="node_modules/restangular/dist/restangular.js"></script>
-
-    <script type="application/javascript" src="src/js/app.js"></script>
-    <script type="application/javascript" src="src/js/factories/newsApiUrls.js"></script>
-    <script type="application/javascript" src="src/js/controllers/mainController.js"></script>
-
 </head>
 <body>
     <nav class="navbar navbar-inverse">
@@ -34,6 +29,12 @@
             </ul>
         </div>
     </nav>
-    <div ng-view></div>
+
+    <ng-view></ng-view>
+
+    <!-- Scripts -->
+    <script type="application/javascript" src="src/js/app.js"></script>
+    <script type="application/javascript" src="src/js/factories/newsApiUrls.js"></script>
+    <script type="application/javascript" src="src/js/controllers/mainController.js"></script>
 </body>
 </html>

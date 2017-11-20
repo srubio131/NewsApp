@@ -17,7 +17,9 @@ app.config(function($routeProvider){
     $routeProvider
         .when("/", {
             controller: "MainController",
-            templateUrl: "../templates/news.html"
+            templateUrl: "src/templates/news.html"
         })
-        .otherwise("/");
+        .otherwise({
+            redirectTo: '/'
+        });
 });

@@ -1,4 +1,4 @@
-var app = angular.module("NewsApp",["ngRoute","restangular"]);
+var app = angular.module("NewsApp",["ngRoute","ngResource"]);
 
 app.constant("NEWSAPI", (function() {
     var baseUrl = "https://newsapi.org/v2/";

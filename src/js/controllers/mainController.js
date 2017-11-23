@@ -4,7 +4,7 @@ app.controller("MainController",["NewsAPIUrlsFactory","$scope","$resource", func
 
     // Cargar últimas noticias
     var urlTopHeadLiness = NewsAPIUrlsFactory.getUrlTopHeadlines('el-mundo');
-    $scope.topheadlines = $resource(urlTopHeadLiness, {}).get();
+    $scope.topheadlines = $resource(urlTopHeadLiness).get();
 
 
 }]);

@@ -1,0 +1,25 @@
+/* Scroll button */
+#scroll-top{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#scroll-top:hover{
+    text-decoration:none;
+    color: #000;
+}
+
+
+/** Pages **/
+/* News */
+.card-columns {
+    @include media-breakpoint-only(sm) {
+        column-count: 2;
+    }
+    @include media-breakpoint-only(lg) {
+        column-count: 3;
+    }
+}

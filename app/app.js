@@ -1,7 +1,7 @@
 'use strict';
 
 // Declaración de modulos de angular y vistas/componentes propios
-var app = angular.module("NewsApp",["ngRoute","ngResource","NewsApp.latestNews"]);
+var app = angular.module("NewsApp",["ngRoute","ngResource","NewsApp.latestNews","NewsApp.search"]);
 
 app.constant("NEWSAPI", (function() {
     var baseUrl = "https://newsapi.org/v2/";

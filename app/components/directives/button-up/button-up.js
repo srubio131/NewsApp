@@ -6,16 +6,21 @@ angular
     .directive("buttonUp", function(){
        return {
            restrict: 'EA',
-           template: '<i id="scroll-top" class="fa fa-arrow-circle-up fa-3x" aria-hidden="true"></i>',
+           template: '<i id="scroll-top" class="fa fa-arrow-circle-up fa-3x"></i>',
            link: function(scope, element, attrs) {
+
+               // Al cargar no aparece el botón arriba
+               $('#scroll-top').hide();
+
                // Ocultar botón ir arriba por defecto y al hacer scroll hacerlo visible
                $(window).scroll(function (event) {
                    event.preventDefault();
                    if ($(this).scrollTop() > 100) {
-                       console.log($(this).scrollTop());
-                       $('#scroll-top').fadeIn();
+                        console.log($(this).scrollTop());
+                       $('#scroll-top').show();
+                       element.fadeIn();
                    } else {
-                       $('#scroll-top').fadeOut();
+                       element.fadeOut();
                    }
                });
 
@@ -37,14 +42,12 @@ angular
 
                element.on('mouseenter', function() {
                   element.css({
-                      textDecoration: 'none',
                       color: '#000'
                   });
                });
 
                element.on('mouseleave', function() {
                    element.css({
-                       textDecoration: 'none',
                        color: '#585858'
                    });
                });

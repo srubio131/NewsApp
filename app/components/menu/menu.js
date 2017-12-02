@@ -1,15 +1,24 @@
 (function($) {
     $(document).ready(function(){
 
-        // Ocultar navbar y al hacer scroll hacerlo visible
-        $(window).scroll(function (e) {
-            e.preventDefault();
-            if ($(this).scrollTop() >= 100) {
-                $('.navbar').fadeOut();
-            } else {
-                $('.navbar').fadeIn();
-            }
-        });
+        // var navbarHeight  = $('.navbar').outerHeight();
+        // var lastScrollTop = 0;
+        //
+        // console.log('nav: '+navbarHeight);
+        //
+        // // Ocultar navbar y al hacer scroll hacerlo visible
+        // $(window).scroll(function (e) {
+        //     var scroll = $(window).scrollTop();
+        //     var currentScroll = $(this).scrollTop();
+        //     if ( scroll >= navbarHeight && currentScroll > lastScrollTop ) {
+        //         //console.log('<100 '+$(window).scrollTop());
+        //         $('.navbar').fadeOut();
+        //     } else {
+        //         //console.log('else '+$(window).scrollTop());
+        //         $('.navbar').fadeIn();
+        //     }
+        //     lastScrollTop = currentScroll;
+        // });
 
     }) ;
 })(jQuery);

@@ -18,11 +18,8 @@ app.constant("NEWSAPI", (function() {
 
 app.config(["$locationProvider", "$routeProvider", function($locationProvider, $routeProvider) {
 
-    var inicioUrl = "/latest-news";
-
-    $locationProvider.html5Mode(true);
-    // $locationProvider.hashPrefix("!");
-    $routeProvider
-        .when("/", { redirectTo: inicioUrl })
-        .otherwise({ redirectTo: inicioUrl });
+    // HTML5Mode rompe el routing...
+    //$locationProvider.html5Mode(true);
+    //$locationProvider.hashPrefix("!");
+    $routeProvider.otherwise({ redirectTo: '/latest-news' });
 }]);

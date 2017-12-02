@@ -20,8 +20,6 @@
     <!-- Custom CSS -->
     <!-- Views -->
     <link rel="stylesheet" type="text/css" href="views/latest-news/latest-news.css" />
-    <!-- Components -->
-    <link rel="stylesheet" type="text/css" href="components/button-up/button-up.css" />
 
     <!-- JS -->
     <!-- Bootstrap -->
@@ -38,10 +36,10 @@
         <div ng-include="'components/menu/menu.html'"></div>
     </header>
 
-    <section id="container-body" class="container mt-auto">
+    <main id="container-body" class="container mt-auto">
         <ng-view></ng-view>
-        <div ng-include="'components/button-up/button-up.html'"></div>
-    </section>
+        <button-up></button-up>
+    </main>
 
     <footer>
         <!--Aviso cookies-->
@@ -60,6 +58,6 @@
     <script type="application/javascript" src="common/directives/ng-active-link.js"></script>
     <!-- Components -->
     <script type="application/javascript" src="components/menu/menu.js"></script>
-    <script type="application/javascript" src="components/button-up/button-up.js"></script>
+    <script type="application/javascript" src="components/directives/button-up/button-up.js"></script>
 </body>
 </html>

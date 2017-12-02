@@ -11,15 +11,3 @@
     text-decoration:none;
     color: #000;
 }
-
-
-/** Pages **/
-/* News */
-.card-columns {
-    @include media-breakpoint-only(sm) {
-        column-count: 2;
-    }
-    @include media-breakpoint-only(lg) {
-        column-count: 3;
-    }
-}

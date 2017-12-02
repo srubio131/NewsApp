@@ -1,0 +1,33 @@
+{
+  "name": "newsapp",
+  "version": "0.0.0",
+  "description": "NewsApp es una plataforma de ultimas noticias y buscador de noticias",
+  "main": "app/index.html",
+  "scripts": {
+    "test": "npm test"
+  },
+  "dependencies": {
+    "angular": "1.3.10",
+    "angular-resource": "1.3.10",
+    "angular-route": "1.3.10",
+    "bootstrap": "4.0.0-alpha.6",
+    "font-awesome": "4.7.0",
+    "jquery": "1.12.4",
+    "tether": "1.4.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srubio131/NewsApp.git"
+  },
+  "keywords": [
+    "AngularJS",
+    "Bootstrap4",
+    "newsapi"
+  ],
+  "author": "Sergio Rubio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/srubio131/NewsApp/issues"
+  },
+  "homepage": "https://github.com/srubio131/NewsApp#readme"
+}

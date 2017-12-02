@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="NewsApp">
+<head>
+    <base href="/NewsApp/app/" />
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width", initial-scale=1, shrink-to-fit="no">
+
+    <title>News App</title>
+
+    <!-- CSS -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="node_modules/tether/dist/css/tether.min.css" />
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+    <!-- Font awesome -->
+    <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <!-- Views -->
+    <link rel="stylesheet" type="text/css" href="views/latest-news/latest-news.css" />
+    <!-- Components -->
+    <link rel="stylesheet" type="text/css" href="components/button-up/button-up.css" />
+
+    <!-- JS -->
+    <!-- Bootstrap -->
+    <script type="application/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="application/javascript" src="node_modules/tether/dist/js/tether.min.js"></script>
+    <script type="application/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- AngularJS -->
+    <script type="application/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="application/javascript" src="node_modules/angular-route/angular-route.js"></script>
+    <script type="application/javascript" src="node_modules/angular-resource/angular-resource.js"></script>
+</head>
+<body>
+    <header class="sticky-top">
+        <div ng-include="'components/menu/menu.html'"></div>
+    </header>
+
+    <section id="container-body" class="container mt-auto">
+        <ng-view></ng-view>
+        <div ng-include="'components/button-up/button-up.html'"></div>
+    </section>
+
+    <footer>
+        <!--Aviso cookies-->
+        <div class="fixed-bottom">
+        </div>
+        <!--Footer-->
+        <div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- AngularJS -->
+    <script type="application/javascript" src="app.js"></script>
+    <script type="application/javascript" src="views/latest-news/latest-news.js"></script>
+    <script type="application/javascript" src="common/factories/news-api-urls.js"></script>
+    <script type="application/javascript" src="common/directives/ng-active-link.js"></script>
+    <!-- Components -->
+    <script type="application/javascript" src="components/menu/menu.js"></script>
+    <script type="application/javascript" src="components/button-up/button-up.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@
             <p>{{ article.author }} - {{ article.publishedAt | date:short }}</p>
             <img class="card-img-top img-fluid" ng-src="{{ article.urlToImage }}" alt="Card image cap">
             <p class="card-text text-justify">{{ article.description }}...</p>
-            <a ng-href="{{ article.url }}" target="_blank" class="btn btn-primary">Leer más</a>
+            <a ng-href="{{ article.url }}" target="_blank" class="btn btn-primary">{{ 'VIEWS.LATEST_NEWS.READ_MORE' | translate }}</a>
         </div>
     </div>
 </div>

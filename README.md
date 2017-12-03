@@ -1,1 +1,1 @@
-# `NewsAPI` — Tu buscador de noticias
+# `NewsApp` — Tu buscador de noticias

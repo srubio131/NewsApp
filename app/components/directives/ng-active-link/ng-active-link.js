@@ -1,6 +1,6 @@
-var app = angular.module("NewsApp");
+angular.module("NewsApp")
 
-app.directive("ngActiveLink",["$location", function ($location) {
+.directive("ngActiveLink",["$location", function ($location) {
     return {
         restrict: 'A', //use as attribute
         scope: false,

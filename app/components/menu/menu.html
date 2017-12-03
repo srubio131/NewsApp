@@ -9,14 +9,14 @@
     <!--Logo + Nombre aplicación-->
     <a class="navbar-brand" href="#/">
         <img src="components/menu/images/logo.png" width="100" height="75" class="d-inline-block align-content-center" alt="Logo NewsApp">
-        NewsApp
+        {{ 'INDEX.TITLE' | translate }}
     </a>
 
     <!--Menú colapsable-->
     <div class="collapse navbar-collapse" id="navbarToggler">
         <div class="navbar-nav mr-auto ml-auto text-center" ng-active-link>
-            <a class="nav-item nav-link active" href="#/latest-news">Inicio</a>
-            <a class="nav-item nav-link" href="#/search">Búsqueda</a>
+            <a class="nav-item nav-link active" href="#/latest-news">{{ 'MENU.HOME' | translate }}</a>
+            <a class="nav-item nav-link" href="#/search">{{ 'MENU.SEARCH' | translate }}</a>
         </div>
         <div class="d-flex flex-row justify-content-center">
             <a class="btn btn-primary" href="https://github.com/srubio131/NewsApp" target="_blank">Github</a>

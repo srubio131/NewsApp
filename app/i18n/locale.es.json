@@ -1,0 +1,18 @@
+{
+    "INDEX": {
+        "TITLE": "News App"
+    },
+    "MENU" : {
+        "HOME": "Inicio",
+        "SEARCH": "Búsqueda"
+    },
+    "VIEWS": {
+        "LATEST_NEWS" : {
+            "READ_MORE": "Leer más"
+        },
+        "SEARCH" : {
+
+        }
+    }
+}
+

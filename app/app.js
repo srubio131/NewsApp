@@ -12,7 +12,20 @@ app.constant("NEWSAPI", (function() {
         BASE: baseUrl,
         TOPHEADLINE: baseUrl + "top-headlines",
         EVERYTHING: baseUrl + "everything",
-        SOURCES: baseUrl + "sources"
+        SOURCES: baseUrl + "sources",
+        CATEGORIES: [
+            "business","entertainment","gaming","general","health-and-medical","music",
+            "politics","science-and-nature","sport","technology"
+        ],
+        LANGUAGES: [
+            "ar", "en", "cn", "de", "es", "fr", "he", "it", "nl", "no", "pt", "ru", "sv", "ud"
+        ],
+        COUNTRIES: [
+            "ar","au","br","ca","cn","de","es","fr","gb","hk","ie","in","is","it","nl","no","pk","ru","sa","sv","us","za"
+        ],
+        SORTBY: [
+            "relevancy", "popularity", "publishedAt"
+        ]
     }
 })());
 

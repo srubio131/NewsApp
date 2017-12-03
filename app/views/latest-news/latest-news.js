@@ -13,7 +13,9 @@ angular.module("NewsApp.latestNews", ["ngRoute"])
 .controller("LatestNewsCtrl",["NewsAPIUrlsFactory","$scope","$resource", function(NewsAPIUrlsFactory,$scope,$resource){
 
     // Cargar últimas noticias
-    var urlTopHeadLiness = NewsAPIUrlsFactory.getUrlTopHeadlines('el-mundo');
-    $scope.topheadlines = $resource(urlTopHeadLiness).get();
+    if (!$scope.topheadlines) {
+        var urlTopHeadLiness = NewsAPIUrlsFactory.getUrlTopHeadlines('el-mundo');
+        $scope.topheadlines = $resource(urlTopHeadLiness).get();
+    }
 
 }])

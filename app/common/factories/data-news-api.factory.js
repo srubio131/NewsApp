@@ -8,15 +8,24 @@ angular.module("NewsApp")
     return (function(){
 
         // Private methods
+        var sourcesDefault = ['el-mundo'];
 
         // Public methods
         return {
-            getTopHeadlines: function(source) {
-                if(!source){
-                    source = 'el-mundo';    // By default
+            getTopHeadlines: function (sources,q,category,language,country) {
+                if(!sources){
+                    sources = sourcesDefault;    // By default
                 }
-                var urlTopHeadLiness = NewsAPIUrlsService.getUrlTopHeadlines(source);
+                var urlTopHeadLiness = NewsAPIUrlsService.getUrlTopHeadlines(sources,q,category,language,country);
                 return $resource(urlTopHeadLiness).get().$promise;
+            },
+            getEverything: function (q, sources, domains, from, to, language, sortBy, page) {
+                var urlEverything = NewsAPIUrlsService.getUrlEverything(q, sources, domains, from, to, language, sortBy, page);
+                return $resource(urlEverything).get().$promise;
+            },
+            getSources: function (category, language, country) {
+                var urlSources = NewsAPIUrlsService.getUrlSources(category, language, country);
+                return $resource(urlSources).get().$promise;
             }
         };
     })();

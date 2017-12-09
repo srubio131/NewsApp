@@ -14,12 +14,12 @@ angular.module("NewsApp.latestNews", ["ngRoute"])
 
     // Cargar últimas noticias
     if (!$scope.topheadlines) {
-        DataNewsAPIFactory.getTopHeadlines('el-mundo')
+        DataNewsAPIFactory.getTopHeadlines()
         .then(function (news) {
             $scope.topheadlines = news;
         })
         .catch(function (err) {
-            console.error('err: '+err);
+            console.error(err.data.code + ' - ' + err.data.message);
         });
     }
 

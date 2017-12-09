@@ -5,8 +5,27 @@ angular.module("NewsApp")
 // Service que devuelve las URLs de las llamadas a la API
 .service("NewsAPIUrlsService", ["NEWSAPI", function(NEWSAPI){
 
-    this.getUrlTopHeadlines = function(source) {
-        return NEWSAPI.TOPHEADLINE + "?sources=" + source + "&apikey=" + NEWSAPI.KEY;
+    this.getUrlTopHeadlines = function(sources,q,category,language,country) {
+        var url = NEWSAPI.TOPHEADLINE + "?";
+
+        if (sources) {
+            url += "sources=" + sources.join(',') + "&";
+        }
+        if (q) {
+            url += "q=" + q + "&";
+        }
+        if (category) {
+            url += "category=" + category + "&";
+        }
+        if (language) {
+            url += "language=" + language + "&";
+        }
+        if (country) {
+            url += "country=" + country + "&";
+        }
+        url = url + "apikey=" + NEWSAPI.KEY;
+
+        return url;
     };
 
     this.getUrlEverything = function(q, sources, domains, from, to, language, sortBy, page) {
@@ -48,15 +67,15 @@ angular.module("NewsApp")
 
         // Añadir category si tiene...
         if (category) {
-            url += category + "&";
+            url += "category=" + category + "&";
         }
         // Añadir language si tiene...
         if (language) {
-            url += language + "&";
+            url += "language=" + language + "&";
         }
         // Añadir country si tiene...
         if (country) {
-            url += country + "&";
+            url += "country=" + country + "&";
         }
         // Añadir "&" en caso de que no haya ningún parámetro con valor
         url = (url.slice(-1) !== "&") ? url+"&" : url;

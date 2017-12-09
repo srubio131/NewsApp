@@ -18,4 +18,4 @@ angular.module("NewsApp.latestNews", ["ngRoute"])
         $scope.topheadlines = $resource(urlTopHeadLiness).get();
     }
 
-}])
+}]);

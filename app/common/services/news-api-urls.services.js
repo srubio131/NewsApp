@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module("NewsApp")
 
 // Service que devuelve las URLs de las llamadas a la API

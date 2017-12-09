@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module("NewsApp")
 
 // Factory que devuelve las URLs de las llamadas a la API
@@ -7,7 +9,6 @@ angular.module("NewsApp")
 
         // Private methods
 
-
         // Public methods
         return {
             getTopHeadlines: function(source) {
@@ -15,7 +16,7 @@ angular.module("NewsApp")
                     source = 'el-mundo';    // By default
                 }
                 var urlTopHeadLiness = NewsAPIUrlsService.getUrlTopHeadlines(source);
-                return $resource(urlTopHeadLiness).get();
+                return $resource(urlTopHeadLiness).get().$promise;
             }
         };
     })();

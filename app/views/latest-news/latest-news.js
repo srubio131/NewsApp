@@ -19,7 +19,7 @@ angular.module("NewsApp.latestNews", ["ngRoute"])
             $scope.topheadlines = news;
         })
         .catch(function (err) {
-            console.log('err: '+err);
+            console.error('err: '+err);
         });
     }
 

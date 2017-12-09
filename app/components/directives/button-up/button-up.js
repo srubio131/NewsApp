@@ -16,7 +16,7 @@ angular
                $(window).scroll(function (event) {
                    event.preventDefault();
                    if ($(this).scrollTop() > 100) {
-                        console.log($(this).scrollTop());
+                        // console.log($(this).scrollTop());
                        $('#scroll-top').show();
                        element.fadeIn();
                    } else {

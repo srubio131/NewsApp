@@ -12,12 +12,21 @@ describe("Tests view 'latest-news'", function () {
         var $scope, controller;
 
         beforeEach(function() {
-           $scope = {};
-           controller = $controller('LatestNewsCtrl', { $scope: $scope });
+            $scope = {};
+            controller = $controller('LatestNewsCtrl', { $scope: $scope });
         });
 
         it("Debe haber una variable topheadlines con valores cargados", function () {
             expect($scope.topheadlines).toBeDefined();
+        });
+
+        it("Debe haber una variable status de la petición a newsapi con valor 'ok'", function () {
+
+            // Async call ...
+            // var status = $scope.topheadlines.status;
+            // console.log($scope.topheadlines);
+            // console.log($scope.topheadlines.status);
+            // expect(status).toEqual("ok");
         });
     });
 

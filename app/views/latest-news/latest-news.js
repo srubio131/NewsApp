@@ -10,12 +10,11 @@ angular.module("NewsApp.latestNews", ["ngRoute"])
         });
 }])
 
-.controller("LatestNewsCtrl",["NewsAPIUrlsFactory","$scope","$resource", function(NewsAPIUrlsFactory,$scope,$resource){
+.controller("LatestNewsCtrl",["DataNewsAPIFactory", "$scope", function(DataNewsAPIFactory, $scope){
 
     // Cargar últimas noticias
     if (!$scope.topheadlines) {
-        var urlTopHeadLiness = NewsAPIUrlsFactory.getUrlTopHeadlines('el-mundo');
-        $scope.topheadlines = $resource(urlTopHeadLiness).get();
+        $scope.topheadlines = DataNewsAPIFactory.getTopHeadlines('el-mundo');
     }
 
 }]);

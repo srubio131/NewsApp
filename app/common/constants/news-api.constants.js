@@ -17,7 +17,20 @@ angular.module("NewsApp")
             "politics","science-and-nature","sport","technology"
         ],
         LANGUAGES: [
-            "ar", "en", "cn", "de", "es", "fr", "he", "it", "nl", "no", "pt", "ru", "sv", "ud"
+            { id: "ar", name: "Árabe" },
+            { id: "en", name: "Inglés" },
+            //{ id: "cn", name: "" },
+            { id: "de", name: "Alemán" },
+            { id: "es", name: "Español" },
+            { id: "fr", name: "Francés" },
+            { id: "he", name: "Hebreo" },
+            { id: "it", name: "Italiano" },
+            { id: "nl", name: "Holandés" },
+            { id: "no", name: "Noruego" },
+            { id: "pt", name: "Portugués" },
+            { id: "ru", name: "Ruso" },
+            { id: "sv", name: "Sueco" },
+            //{ id: "ud", name: "" }
         ],
         COUNTRIES: [
             "ar","au","br","ca","cn","de","es","fr","gb","hk","ie","in","is","it","nl","no","pk","ru","sa","sv","us","za"

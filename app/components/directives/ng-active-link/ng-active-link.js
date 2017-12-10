@@ -1,5 +1,7 @@
-angular.module("NewsApp")
+'use strict';
 
+angular
+.module("NewsApp")
 .directive("ngActiveLink",["$location", function ($location) {
     return {
         restrict: 'A', //use as attribute

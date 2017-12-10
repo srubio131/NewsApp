@@ -1,7 +1,7 @@
 'use strict';
 
 // Declaración de modulos de angular y vistas/componentes propios
-var app = angular.module("NewsApp",["ngRoute","ngResource", "pascalprecht.translate","NewsApp.latestNews","NewsApp.search"]);
+var app = angular.module("NewsApp",["ngRoute","ngResource", "pascalprecht.translate","NewsApp.latestNews","NewsApp.search","angularCSS"]);
 
 app.config(["$locationProvider", "$routeProvider", "$translateProvider", function($locationProvider, $routeProvider, $translateProvider) {
 

@@ -21,6 +21,9 @@ angular.module("NewsApp")
             },
             getEverything: function (q, sources, domains, from, to, language, sortBy, page) {
                 var urlEverything = NewsAPIUrlsService.getUrlEverything(q, sources, domains, from, to, language, sortBy, page);
+
+                console.log(urlEverything);
+
                 return $resource(urlEverything).get().$promise;
             },
             getSources: function (category, language, country) {

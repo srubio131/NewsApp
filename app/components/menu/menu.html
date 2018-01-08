@@ -1,10 +1,4 @@
-<nav class="navbar bg-inverse navbar-inverse navbar-toggleable-sm">
-
-    <!--Botón de hamburguesa-->
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-            data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-sm">
 
     <!--Logo + Nombre aplicación-->
     <a class="navbar-brand" href="#/">
@@ -12,15 +6,22 @@
         {{ 'INDEX.TITLE' | translate }}
     </a>
 
+    <!--Botón de hamburguesa-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+    </button>
+
     <!--Menú colapsable-->
     <div class="collapse navbar-collapse" id="navbarToggler">
-        <div class="navbar-nav mr-auto ml-auto text-center" ng-active-link>
-            <a class="nav-item nav-link active" href="#/latest-news">{{ 'MENU.HOME' | translate }}</a>
-            <a class="nav-item nav-link" href="#/search">{{ 'MENU.SEARCH' | translate }}</a>
-        </div>
+        <ul class="navbar-nav mr-auto ml-auto text-center" ng-active-link>
+            <li class="nav-item">
+                <a class="nav-link" href="latest-news">{{ 'MENU.HOME' | translate }}</a>
+                <a class="nav-link" href="search">{{ 'MENU.SEARCH' | translate }}</a>
+            </li>
+        </ul>
         <div class="d-flex flex-row justify-content-center">
             <a class="btn btn-primary" href="https://github.com/srubio131/NewsApp" target="_blank">Github</a>
         </div>
     </div>
-
 </nav>

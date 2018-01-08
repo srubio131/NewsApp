@@ -2,23 +2,19 @@
 
 angular
     .module("NewsApp")
-    .config(advancedSearchConfig)
     .directive("advancedSearchBox", advancedSearchBoxDrt);
-
-function advancedSearchConfig(DataNewsAPIFactory, NEWSAPI, $filter) {
-}
 
 function advancedSearchBoxDrt() {
     return {
         restrict: 'EA',
         templateUrl: 'components/directives/advanced-search-box/advanced-search-box.html',
         css: 'components/directives/advanced-search-box/advanced-search-box.css',         // Provide by angular-css
-        controller: AdvancedSearchBoxCtrl,
-        controllerAs: vm
+        controller: advancedSearchBoxCtrl,
+        controllerAs: 'vm'
     }
 }
 
-function AdvancedSearchBoxCtrl() {
+function advancedSearchBoxCtrl(DataNewsAPIFactory, NEWSAPI, $filter) {
 
     var vm = this;
 
@@ -41,19 +37,18 @@ function AdvancedSearchBoxCtrl() {
         });
 
     // Search
-    vm.search = function search(selectedSearch,selectedSource,selectedFrom,selectedTo,selectedLanguage,selectedSortBy) {
-        console.log('paso');
+    vm.search = function search() {
 
         // Convert dates to ISO 8601 format
-        selectedFrom = $filter('date')(selectedFrom, 'yyyy-MM-dd');
-        selectedTo   = $filter('date')(selectedTo, 'yyyy-MM-dd');
+        var selectedFrom = $filter('date')(vm.selectedFrom, 'yyyy-MM-dd');
+        var selectedTo   = $filter('date')(vm.selectedTo, 'yyyy-MM-dd');
 
-        DataNewsAPIFactory.getEverything(selectedSearch,selectedSource,'',selectedFrom,selectedTo,selectedLanguage,selectedSortBy, 20)
+        DataNewsAPIFactory.getEverything(vm.selectedSearch,vm.selectedSource,'',selectedFrom,selectedTo,vm.selectedLanguage,vm.selectedSortBy, 20)
             .then(function (result) {
-                $scope.articles = result.articles;
+                vm.articles = result.articles;
             })
             .catch(function (err) {
                 console.error(err.data.code + ' - ' + err.data.message);
             });
     };
-}]);
+};

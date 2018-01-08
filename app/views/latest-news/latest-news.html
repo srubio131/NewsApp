@@ -1,5 +1,5 @@
 <div class="card-columns">
-    <div class="card" ng-repeat="article in topheadlines.articles">
+    <div class="card" ng-repeat="article in vm.topheadlines.articles">
         <div class="card-block">
             <h4 class="card-title text-left">{{ article.title }}</h4>
             <p>{{ article.author }} - {{ article.publishedAt | date:short }}</p>

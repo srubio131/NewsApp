@@ -1,8 +1,10 @@
 'use strict';
 
-angular.module("NewsApp")
+angular
+    .module("NewsApp")
+    .constant("NEWSAPI", NewsApiConstants());
 
-.constant("NEWSAPI", (function() {
+function NewsApiConstants () {
     var baseUrl = "https://newsapi.org/v2/";
     var apikey  = "e516be68c0cc451486d8b578e20db4b4";
 
@@ -39,4 +41,4 @@ angular.module("NewsApp")
             "relevancy", "popularity", "publishedAt"
         ]
     }
-})());
+};

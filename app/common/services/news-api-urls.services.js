@@ -1,10 +1,11 @@
 'use strict';
 
-angular.module("NewsApp")
+angular
+    .module("NewsApp")
+    // Service que devuelve las URLs de las llamadas a la API
+    .service("NewsAPIUrlsService", NewsAPIUrlsService);
 
-// Service que devuelve las URLs de las llamadas a la API
-.service("NewsAPIUrlsService", ["NEWSAPI", function(NEWSAPI){
-
+function NewsAPIUrlsService(NEWSAPI) {
     this.getUrlTopHeadlines = function(sources,q,category,language,country) {
         var url = NEWSAPI.TOPHEADLINE + "?";
 
@@ -83,5 +84,4 @@ angular.module("NewsApp")
 
         return url;
     };
-
-}]);
+};

@@ -1,10 +1,11 @@
 'use strict';
 
-angular.module("NewsApp")
+angular
+    .module('NewsApp')
+    // Factory que devuelve las URLs de las llamadas a la API
+    .factory('DataNewsAPIFactory', DataNewsAPIFactory);
 
-// Factory que devuelve las URLs de las llamadas a la API
-.factory("DataNewsAPIFactory", ["NewsAPIUrlsService", "$resource", function(NewsAPIUrlsService, $resource){
-
+function DataNewsAPIFactory(NewsAPIUrlsService, $resource) {
     return (function(){
 
         // Private methods
@@ -22,7 +23,7 @@ angular.module("NewsApp")
             getEverything: function (q, sources, domains, from, to, language, sortBy, page) {
                 var urlEverything = NewsAPIUrlsService.getUrlEverything(q, sources, domains, from, to, language, sortBy, page);
 
-                console.log(urlEverything);
+                //console.log(urlEverything);
 
                 return $resource(urlEverything).get().$promise;
             },
@@ -32,4 +33,4 @@ angular.module("NewsApp")
             }
         };
     })();
-}]);
+}

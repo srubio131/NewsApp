@@ -1,14 +1,14 @@
-<div class="container" ng-controller="AdvancedSearchBoxCtrl">
+<div class="container">
     <div class="row no-gutters justify-content-center">
         <div class="col-sm-9 col-6">
-            <input class="form-control" ng-model="selectedSearch" type="text" placeholder="Search" />
+            <input class="form-control" ng-model="vm.selectedSearch" type="text" placeholder="Search" />
         </div>
         <div class="col-sm-1 col-1">
             <i class="fa fa-chevron-circle-down fa-2x" aria-hidden="true"></i>
         </div>
         <div class="col-sm-2 col-7">
             <button type="button" class="btn btn-block btn-primary"
-                    ng-click="search(selectedSearch,selectedSource,selectedFrom,selectedTo,selectedLanguage,selectedSortBy)">
+                    ng-click="vm.search()">
                 Search
             </button>
         </div>
@@ -17,25 +17,25 @@
         <div class="col-sm col">
             <!--<label id="sources" for="sources">Sources</label>-->
             <select class="form-control"
-                    ng-model="selectedSource"
-                    ng-options="source.id as source.name for source in sources">
+                    ng-model="vm.selectedSource"
+                    ng-options="source.id as source.name for source in vm.sources">
                 <option value="" disabled selected>Select Source</option>
                 <option value="+">Show All</option>
             </select>
         </div>
         <div class="col-sm col">
             <!--<label id="from"  for="from">From</label>-->
-            <input placeholder="From" ng-model="selectedFrom" class="form-control" type="date" />
+            <input placeholder="From" ng-model="vm.selectedFrom" class="form-control" type="date" />
         </div>
         <div class="col-sm col">
             <!--<label id="to" for="to">To</label>-->
-            <input placeholder="To" ng-model="selectedTo" class="form-control" type="date" />
+            <input placeholder="To" ng-model="vm.selectedTo" class="form-control" type="date" />
         </div>
         <div class="col-sm col">
             <!--<label id="language" for="language">Language</label>-->
             <select class="form-control"
-                    ng-model="selectedLanguage"
-                    ng-options="lang.id as lang.name for lang in languages">
+                    ng-model="vm.selectedLanguage"
+                    ng-options="lang.id as lang.name for lang in vm.languages">
                 <option value="" disabled selected>Select Language</option>
                 <option value="+">Show All</option>
             </select>
@@ -43,8 +43,8 @@
         <div class="col-sm col">
             <!--<label id="sortBy" for="sortBy">Sort by</label>-->
             <select class="form-control"
-                ng-model="selectedSortBy"
-                ng-options="s as s for s in sortby">
+                ng-model="vm.selectedSortBy"
+                ng-options="s as s for s in vm.sortby">
                 <option value="" disabled selected>Select type sort</option>
             </select>
         </div>
@@ -52,7 +52,7 @@
 
     <div class="container">
         <div class="card-columns">
-            <div class="card" ng-repeat="article in articles">
+            <div class="card" ng-repeat="article in vm.articles">
                 <div class="card-block">
                     <h4 class="card-title text-left">{{ article.title }}</h4>
                     <p>{{ article.author }} - {{ article.publishedAt | date:short }}</p>

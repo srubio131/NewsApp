@@ -1,17 +1,15 @@
 'use strict';
 
 angular
-.module("NewsApp.search", ["ngRoute"])
+    .module("NewsApp.search", ["ngRoute"])
+    .config(SearchConfig)
+    //.controller("SearchCtrl", SearchCtrl);
 
-.config(["$routeProvider", function($routeProvider) {
+function SearchConfig($routeProvider) {
     $routeProvider
         .when("/search", {
-            controller: "SearchCtrl",
+            //controller: "SearchCtrl",
+            //controllerAs: "vm",
             templateUrl: "views/search/search.html"
         });
-}])
-
-.controller("SearchCtrl",["$scope", function($scope){
-
-
-}]);
+}

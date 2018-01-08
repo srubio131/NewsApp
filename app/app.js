@@ -1,14 +1,14 @@
 'use strict';
 
 // Declaración de modulos de angular y vistas/componentes propios
-var app = angular.module("NewsApp",["ngRoute","ngResource", "pascalprecht.translate","NewsApp.latestNews","NewsApp.search","angularCSS"]);
+angular
+    .module("NewsApp",["ngRoute","ngResource","pascalprecht.translate","NewsApp.latestNews","NewsApp.search","angularCSS"])
+    .config(appConfig);
 
-app.config(["$locationProvider", "$routeProvider", "$translateProvider", function($locationProvider, $routeProvider, $translateProvider) {
+function appConfig ($locationProvider, $routeProvider, $translateProvider) {
 
-    // HTML5Mode rompe el routing...
-    //$locationProvider.html5Mode(true);
-    //$locationProvider.hashPrefix("!");
     $routeProvider.otherwise({ redirectTo: '/latest-news' });
+    $locationProvider.html5Mode(true); // Quitar el # de las url's
 
     // Translate provider i18n
     $translateProvider.useStaticFilesLoader({
@@ -17,5 +17,4 @@ app.config(["$locationProvider", "$routeProvider", "$translateProvider", functio
     });
     $translateProvider.preferredLanguage('es');
     $translateProvider.useSanitizeValueStrategy('escape');
-
-}]);
+};

@@ -50,10 +50,10 @@ function AdvancedSearchBoxCtrl() {
 
         DataNewsAPIFactory.getEverything(selectedSearch,selectedSource,'',selectedFrom,selectedTo,selectedLanguage,selectedSortBy, 20)
             .then(function (result) {
-                vm.articles = result.articles;
+                $scope.articles = result.articles;
             })
             .catch(function (err) {
                 console.error(err.data.code + ' - ' + err.data.message);
             });
-    }
-}
+    };
+}]);
